@@ -8,9 +8,14 @@ export const colors = {
     grey4:"#bdc6cf",
     grey5:"#e1e8ee",
     cardCommet:"#86939e",
-    cardBackGroundColor:"white"
+    cardBackGroundColor:"white",
+    header: "white",
+    headerSize:23,
+    fontSize:16,
+    textInputHeight:50,
+    textInputFontSize: 18
 }
 
 export const parameters = {
-    headerHeight: 50
+    headerHeight: 45
 }
