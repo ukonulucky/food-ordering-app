@@ -17,5 +17,24 @@ export const colors = {
 }
 
 export const parameters = {
-    headerHeight: 45
+    headerHeight: 45, 
+    buttonStyles :{
+        justifyContent: "center",
+        alignItems: "center",
+        height:50,
+        width:"100%",
+      backgroundColor:"#ff8c52",
+      marginTop:5,
+      borderRadius:10
+
+    },
+    titleStyle:{
+        color:"white",
+        justifyContent: "center",
+        alignItems: "center",
+        fontSize:12,
+        fontWeight:"bold",
+        textTransform: "uppercase",
+        fontSize:18,
+    }
 }

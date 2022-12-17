@@ -3,7 +3,9 @@ import {View, Text, StatusBar, StyleSheet} from "react-native"
 import Footer from './src/components/Footer'
 import Header from './src/components/Header'
 import { colors } from './src/global/styles'
+import RootNavigation from './src/navigation/RootNavigation'
 import SignIn from './src/screens/authScreen/SignIn'
+import SignInWelComeScreen from './src/screens/authScreen/SignInWelComeScreen'
  
 function App() {
   return (
@@ -12,7 +14,8 @@ function App() {
       barStyle="light-content"
       backgroundColor={colors.buttons}
       />
-      <SignIn />
+
+  <RootNavigation />
     </View>
   )
 }

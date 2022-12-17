@@ -3,9 +3,9 @@ import { color } from '@rneui/base'
 
 import {View, Text, StyleSheet, TextInput, TouchableOpacity, TouchableNativeFeedback} from "react-native"
 import Header from '../../components/Header'
-import { colors } from '../../global/styles'
+import { colors, parameters } from '../../global/styles'
 import * as animatable from "react-native-animatable"
-import { Icon } from 'react-native-elements'
+import { Button, Icon, SocialIcon } from 'react-native-elements'
 
 
 function SignIn() {
@@ -56,7 +56,7 @@ const input2 = useRef(2)
         </animatable.View>
         
         <TextInput
-         style={styles.text}
+         style={styles.inputText}
         placeholder='Password'
         onFocus={() => {
             setInputAnimate(true)
@@ -82,17 +82,78 @@ const input2 = useRef(2)
           />
         </animatable.View>
       </View>
-      <View style={styles.buttonContainer}>
-        
-        <TouchableNativeFeedback>
-        <Text style={styles.buttons}>
-          SIGN IN
-        </Text>
-        </TouchableNativeFeedback>
-      </View>
+     
       
        </View>
+       <View>
+        <Button 
+        title="sign in" 
+        buttonStyle = {parameters.buttonStyles}
+        titleStyle = {parameters.titleStyle}
+        />
+        
+      </View>
+     <View style={{marginVertical:20, justifyContent:"center", alignItems:"center"}}>
+      <Text style={{...styles.word, textDecorationLine:"underline"}}>
+       Forgot Password?
+      </Text>
+     </View>
+     <View style={{
+      marginBottom:20,
+      justifyContent:"center",
+      alignItems:"center"
+     }}>
+      <Text style={{
+        fontSize:18,
+        fontWeight:"bold",
+        color:"darkGray",
+      }}> 
+        OR
+      </Text>
+     </View>
+    <View>
+    <SocialIcon 
+     title='Sign In With Facebook'
+     button 
+     type='facebook'
+     style={styles.socialIcon}
+     onPress = {() => {
+      console.log("running")
+     }}
+     />
     </View>
+    <View>
+    <SocialIcon 
+     title='Sign In With Google'
+     button 
+     type='google'
+     style={styles.socialIcon}
+     onPress = {() => {
+      console.log("running")
+     }} 
+     />
+    </View>
+    <View style={{
+      marginTop: 20
+    }}>
+    <Text style={styles.word}>
+         New on Xpress Food?
+        </Text>
+    </View>  
+
+    <View style={{
+     marginTop: 20,
+     alignItems:"flex-end"
+    }}>
+      <Button 
+      title="Create an account"
+      buttonStyle={styles.createButtonStyle}
+      titleStyle={styles.createButtonTitleStyle}
+      />
+    </View>
+    </View>
+    
+ 
     </View> 
   )
 }
@@ -102,12 +163,12 @@ const input2 = useRef(2)
    paddingHorizontal: 20,
   },
   text:{
-  marginTop: 20,
+  marginTop: 10,
   alignItems:"center",
   fontSize: colors.fontSize
   },
   word:{
-     marginVertical:5,
+     marginVertical:2,
      fontSize: colors.fontSize
   },
   heading:{
@@ -153,13 +214,33 @@ const input2 = useRef(2)
   buttonContainer:{
     marginVertical:15,
     width:"100%",
-    backgroundColor: colors.buttons,
-    padding:10,
-    alignItems:"center",
-    borderRadius:10,
+     height:200
+   
   },
-  text:{
+  inputText:{
   flex: 1
+  },
+  socialIcon:{
+    marginTop:10,
+    borderRadius:10,
+    height:50
+  },
+  createButtonStyle:{
+    backgroundColor:"white",
+    borderWidth:1,
+    borderRadius:10,
+    paddingHorizontal:10,
+    justifyContent:"center",
+    alignContent:"flex-end",
+    borderColor:colors.buttons,
+    height:40
+  },
+  createButtonTitleStyle:{
+    color:colors.buttons,
+    fontSize:16,
+    fontWeight:"bold",
+    justifyContentce:"center",
+    alignItems:"center"
   }
  })
 
